@@ -49,7 +49,8 @@ class OrderService
             }
 
             // Calculate totals
-            $tax = $subtotal * 0.08; // 8% tax
+            $taxRate = config('app.tax_rate', 0.08); // Default 8% tax, configurable
+            $tax = $data['tax'] ?? ($subtotal * $taxRate);
             $shippingCost = $data['shipping_cost'] ?? 0;
             $discount = $data['discount'] ?? 0;
             $total = $subtotal + $tax + $shippingCost - $discount;

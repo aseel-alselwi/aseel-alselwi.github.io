@@ -123,4 +123,16 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Tax Rate
+    |--------------------------------------------------------------------------
+    |
+    | The default tax rate used for order calculations. This can be overridden
+    | per order if needed. The rate is expressed as a decimal (e.g., 0.08 = 8%).
+    |
+    */
+
+    'tax_rate' => env('TAX_RATE', 0.08),
+
 ];
